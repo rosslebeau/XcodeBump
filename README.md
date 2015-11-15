@@ -1,3 +1,3 @@
-# github_bump
+# XcodeBump
 
-A small Ruby script that bumps the version of your Xcode build number when a push is made to a certain branch. Uses Sinatra, and requires git.
+A small Ruby script that bumps the version of your Xcode build number and pushes the change to git. Includes support for GitHub's `push` webhook, to automate build number bumping on shared branches.
