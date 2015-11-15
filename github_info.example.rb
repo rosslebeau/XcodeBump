@@ -1,0 +1,4 @@
+GITHUB_USERNAME = 'username'
+GITHUB_PASSWORD = 'password'
+
+GITHUB_WEBHOOK_SECRET = 'secret'
