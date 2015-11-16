@@ -15,7 +15,10 @@ post '/github_bump' do
   
   response.status = 204
 
-  bump = XcodeBump.new('git@github.com:rosslebeau/buildnumbertest.git', '../xcbTest', 'master', 'Bump build number')
+  repo_name = json['repository']['full_name']
+  git_remote_ssh_url = json['repository']['ssh_url']
+
+  bump = XcodeBump.new(git_remote_ssh_url, "../xcbTest/#{repo_name}", 'master', 'Bump build number')
   bump_status = bump.bump_from_github_push_hook(jsonBody)
 
   if bump_status == XcodeBumpStatus::ERROR
